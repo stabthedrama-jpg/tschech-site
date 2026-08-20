@@ -3,45 +3,559 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TSCHECH</title>
+
+  <title>TSCHECH Labs</title>
+  <meta name="description" content="TSCHECH Labs — ideas grow here.">
+
   <style>
-  body {
-    background-color: #f4f1e8;
-    color: #222222;
-    font-family: Arial, sans-serif;
-    text-align: center;
-    padding-top: 150px;
-  }
+    :root {
+      --paper: #f3f0e6;
+      --ink: #1f2521;
+      --muted: #6b706b;
+      --green: #294333;
+      --green2: #46624f;
+      --line: rgba(31, 37, 33, 0.15);
+      --card: rgba(255, 255, 255, 0.58);
+    }
 
-  h1 {
-    font-size: 64px;
-    margin-bottom: 10px;
-  }
+    * {
+      box-sizing: border-box;
+    }
 
-.tagline {
-  font-size: 24px;
-  font-weight: bold;
-}
+    html {
+      scroll-behavior: smooth;
+    }
 
-.lab-note {
-  font-size: 16px;
-  color: #666666;
-}
+    body {
+      margin: 0;
+      background:
+        radial-gradient(
+          circle at 50% 0%,
+          rgba(70, 98, 79, 0.10),
+          transparent 38%
+        ),
+        var(--paper);
+      color: var(--ink);
+      font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+    }
+
+    .shell {
+      width: min(1100px, calc(100% - 28px));
+      margin: 0 auto;
+    }
+
+    header {
+      min-height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .wordmark {
+      color: var(--ink);
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 800;
+      letter-spacing: 0.2em;
+    }
+
+    .labs {
+      color: var(--muted);
+      font-size: 12px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 55px 0 12px;
+    }
+
+    .eyebrow {
+      margin: 0 0 10px;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 0.17em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight: 500;
+      font-size: clamp(52px, 10vw, 100px);
+      line-height: 0.95;
+      letter-spacing: -0.05em;
+    }
+
+    .intro {
+      max-width: 620px;
+      margin: 22px auto 0;
+      color: var(--muted);
+      font-size: 17px;
+      line-height: 1.6;
+    }
+
+    .tree-stage {
+      max-width: 850px;
+      margin: 0 auto;
+    }
+
+    svg {
+      display: block;
+      width: 100%;
+      height: auto;
+      overflow: visible;
+    }
+
+    .tree {
+      fill: var(--green);
+    }
+
+    .tree-line {
+      fill: none;
+      stroke: var(--green);
+      stroke-width: 10;
+      stroke-linecap: round;
+    }
+
+    .root {
+      fill: none;
+      stroke: var(--green2);
+      stroke-width: 5;
+      stroke-linecap: round;
+      opacity: 0.8;
+    }
+
+    .branch-link {
+      text-decoration: none;
+    }
+
+    .branch-link rect {
+      fill: var(--paper);
+      stroke: rgba(41, 67, 51, 0.45);
+      stroke-width: 1.5;
+      transition: 0.18s ease;
+    }
+
+    .branch-link text {
+      fill: var(--ink);
+      font-size: 18px;
+      font-weight: bold;
+      pointer-events: none;
+    }
+
+    .branch-link:hover rect,
+    .branch-link:focus rect {
+      fill: white;
+      stroke: var(--green);
+      stroke-width: 2;
+    }
+
+    .hint {
+      margin: -8px 0 50px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      padding-bottom: 70px;
+    }
+
+    .project {
+      scroll-margin-top: 25px;
+      padding: 24px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: var(--card);
+    }
+
+    .status {
+      display: inline-block;
+      margin-bottom: 18px;
+      padding: 5px 9px;
+      border: 1px solid rgba(41, 67, 51, 0.25);
+      border-radius: 999px;
+      color: var(--green);
+      font-size: 11px;
+      font-weight: bold;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    h2 {
+      margin: 0 0 9px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 27px;
+      font-weight: 500;
+    }
+
+    .project p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 28px 0 38px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    footer strong {
+      color: var(--ink);
+      letter-spacing: 0.08em;
+    }
+
+    @media (max-width: 720px) {
       .hero {
-    max-width: 700px;
-    margin: 0 auto;
-    padding: 40px;
-        background-color: white;
-border: 1px solid #dddddd;
-  }
-</style>
+        padding-top: 42px;
+      }
+
+      .projects {
+        grid-template-columns: 1fr;
+      }
+
+      .branch-link text {
+        font-size: 17px;
+      }
+    }
+  </style>
 </head>
 
 <body>
-  <div class="hero">
-    <h1>TSCHECH</h1>
-    <p class="tagline">Ideas grow here.</p>
-    <p class="lab-note">Back to the lab again.</p>
+
+  <div class="shell">
+
+    <header>
+      <a class="wordmark" href="#top">TSCHECH</a>
+      <div class="labs">Labs</div>
+    </header>
+
+    <main id="top">
+
+      <section class="hero">
+        <p class="eyebrow">A living laboratory</p>
+
+        <h1>Ideas grow here.</h1>
+
+        <p class="intro">
+          TSCHECH Labs is a place for useful ideas,
+          strange experiments, community projects,
+          and things worth making.
+        </p>
+      </section>
+
+
+      <section class="tree-stage">
+
+        <svg
+          viewBox="0 0 900 690"
+          role="img"
+          aria-label="TSCHECH Labs daisugi tree"
+        >
+
+          <!-- ROOTS -->
+
+          <path
+            class="root"
+            d="M450 590 C405 622 360 637 288 648"
+          />
+
+          <path
+            class="root"
+            d="M450 592 C402 652 362 665 322 672"
+          />
+
+          <path
+            class="root"
+            d="M450 592 C490 636 548 657 613 665"
+          />
+
+          <path
+            class="root"
+            d="M450 590 C518 607 584 622 669 632"
+          />
+
+          <path
+            class="root"
+            d="M450 596 C450 626 450 652 451 679"
+          />
+
+
+          <!--
+            MAIN TRUNK
+            Broad top creates the hidden T.
+          -->
+
+          <path
+            class="tree"
+            d="
+              M395 590
+              C402 530 406 476 406 410
+
+              L362 410
+
+              C346 410 336 400 336 388
+              C336 376 346 366 362 366
+
+              L538 366
+
+              C554 366 564 376 564 388
+              C564 400 554 410 538 410
+
+              L494 410
+
+              C494 476 498 530 505 590
+
+              C479 606 421 606 395 590
+              Z
+            "
+          />
+
+
+          <!-- DAISUGI SHOOTS -->
+
+          <path
+            class="tree-line"
+            d="M382 371 C382 304 379 231 378 157"
+          />
+
+          <path
+            class="tree-line"
+            d="M450 371 C450 284 450 189 450 90"
+          />
+
+          <path
+            class="tree-line"
+            d="M518 371 C518 304 521 231 522 157"
+          />
+
+
+          <!-- SMALL BRANCHES -->
+
+          <path
+            class="tree-line"
+            style="stroke-width:7"
+            d="M378 221 L350 196 M378 259 L405 233"
+          />
+
+          <path
+            class="tree-line"
+            style="stroke-width:7"
+            d="M450 158 L421 132 M450 200 L480 171"
+          />
+
+          <path
+            class="tree-line"
+            style="stroke-width:7"
+            d="M522 221 L549 196 M522 259 L494 233"
+          />
+
+
+          <!-- CROWNS -->
+
+          <path
+            class="tree"
+            d="
+              M378 118
+              C345 148 347 184 378 196
+              C409 184 411 148 378 118
+              Z
+            "
+          />
+
+          <path
+            class="tree"
+            d="
+              M450 48
+              C416 80 418 119 450 132
+              C482 119 484 80 450 48
+              Z
+            "
+          />
+
+          <path
+            class="tree"
+            d="
+              M522 118
+              C489 148 491 184 522 196
+              C553 184 555 148 522 118
+              Z
+            "
+          />
+
+
+          <!-- CLICKABLE SHOOTS -->
+
+          <a
+            class="branch-link"
+            href="#deep-roots"
+            aria-label="Deep Roots"
+          >
+            <rect
+              x="225"
+              y="270"
+              width="180"
+              height="50"
+              rx="25"
+            />
+
+            <text
+              x="315"
+              y="301"
+              text-anchor="middle"
+            >
+              Deep Roots
+            </text>
+          </a>
+
+
+          <a
+            class="branch-link"
+            href="#forge"
+            aria-label="TSCHECH Forge"
+          >
+            <rect
+              x="355"
+              y="4"
+              width="190"
+              height="50"
+              rx="25"
+            />
+
+            <text
+              x="450"
+              y="35"
+              text-anchor="middle"
+            >
+              TSCHECH Forge
+            </text>
+          </a>
+
+
+          <a
+            class="branch-link"
+            href="#garden"
+            aria-label="Neighbor's Garden"
+          >
+            <rect
+              x="495"
+              y="270"
+              width="205"
+              height="50"
+              rx="25"
+            />
+
+            <text
+              x="597"
+              y="301"
+              text-anchor="middle"
+            >
+              Neighbor's Garden
+            </text>
+          </a>
+
+        </svg>
+
+      </section>
+
+
+      <p class="hint">
+        Tap a shoot to see what is growing.
+      </p>
+
+
+      <section class="projects">
+
+        <article
+          class="project"
+          id="deep-roots"
+        >
+
+          <span class="status">
+            Growing
+          </span>
+
+          <h2>
+            Deep Roots
+          </h2>
+
+          <p>
+            Community-centered elder wellness
+            and home-care ideas built around
+            independence, connection, and support.
+          </p>
+
+        </article>
+
+
+        <article
+          class="project"
+          id="forge"
+        >
+
+          <span class="status">
+            New shoot
+          </span>
+
+          <h2>
+            TSCHECH Forge
+          </h2>
+
+          <p>
+            A small-batch experiment in forged tools,
+            blades, craftsmanship, and eventually
+            metallurgy — learning in public as we grow.
+          </p>
+
+        </article>
+
+
+        <article
+          class="project"
+          id="garden"
+        >
+
+          <span class="status">
+            Growing
+          </span>
+
+          <h2>
+            Neighbor's Garden
+          </h2>
+
+          <p>
+            A community food project centered on
+            growing more, sharing more, and making
+            local abundance easier to access.
+          </p>
+
+        </article>
+
+      </section>
+
+    </main>
+
+
+    <footer>
+      <strong>TSCHECH LABS</strong>
+      &nbsp;·&nbsp;
+      Back to the lab again.
+    </footer>
+
   </div>
+
 </body>
 </html>
