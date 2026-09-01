@@ -1,0 +1,714 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#f05a28" />
+  <title>Bowlworks | Home of the Shovel Bowl</title>
+  <meta name="description" content="Bowlworks makes hot, simple, satisfying rice bowls built for hungry people. Home of the Shovel Bowl." />
+
+  <style>
+    :root{
+      --paper:#f6eedf;
+      --cream:#fff8ea;
+      --ink:#1d1d1b;
+      --muted:#6b655c;
+      --orange:#f05a28;
+      --yellow:#f3be3b;
+      --red:#c83b2f;
+      --green:#57705c;
+      --line:rgba(29,29,27,.18);
+      --shadow:8px 8px 0 #1d1d1b;
+      --radius:22px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      background:
+        radial-gradient(circle at 15% 10%, rgba(243,190,59,.22), transparent 24rem),
+        radial-gradient(circle at 90% 30%, rgba(240,90,40,.12), transparent 28rem),
+        var(--paper);
+      color:var(--ink);
+      font-family:Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height:1.45;
+    }
+
+    a{color:inherit}
+    .wrap{width:min(1120px, calc(100% - 32px)); margin-inline:auto}
+
+    .topbar{
+      position:sticky; top:0; z-index:20;
+      backdrop-filter:blur(12px);
+      background:rgba(246,238,223,.88);
+      border-bottom:2px solid var(--ink);
+    }
+
+    .nav{
+      min-height:72px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+    }
+
+    .brand{
+      display:flex; align-items:center; gap:11px;
+      font-weight:1000; letter-spacing:-.04em;
+      text-decoration:none; font-size:1.15rem;
+    }
+
+    .brand-mark{
+      width:38px; height:38px; border:3px solid var(--ink); border-radius:50%;
+      background:var(--orange);
+      position:relative;
+      box-shadow:3px 3px 0 var(--ink);
+    }
+    .brand-mark:before{
+      content:"";
+      position:absolute;
+      width:18px; height:7px;
+      border:3px solid var(--ink);
+      border-top:0;
+      border-radius:0 0 18px 18px;
+      left:7px; top:10px;
+      transform:rotate(-7deg);
+      background:var(--cream);
+    }
+    .brand-mark:after{
+      content:"";
+      position:absolute;
+      width:4px; height:18px;
+      background:var(--ink);
+      left:17px; top:-11px;
+      border-radius:3px;
+      transform:rotate(35deg);
+    }
+
+    nav{display:flex; gap:18px; align-items:center}
+    nav a{
+      text-decoration:none;
+      font-weight:850;
+      font-size:.92rem;
+    }
+    nav a:hover{text-decoration:underline}
+
+    .btn{
+      display:inline-flex;
+      justify-content:center;
+      align-items:center;
+      min-height:48px;
+      padding:0 18px;
+      border:3px solid var(--ink);
+      border-radius:999px;
+      background:var(--orange);
+      color:var(--ink);
+      text-decoration:none;
+      font-weight:950;
+      box-shadow:4px 4px 0 var(--ink);
+      transition:.15s ease;
+    }
+    .btn:hover{transform:translate(2px,2px); box-shadow:2px 2px 0 var(--ink)}
+    .btn.alt{background:var(--cream)}
+
+    .hero{
+      padding:72px 0 46px;
+      display:grid;
+      grid-template-columns:1.12fr .88fr;
+      gap:48px;
+      align-items:center;
+    }
+
+    .eyebrow{
+      display:inline-block;
+      padding:8px 12px;
+      background:var(--yellow);
+      border:2px solid var(--ink);
+      border-radius:999px;
+      font-size:.8rem;
+      font-weight:1000;
+      letter-spacing:.11em;
+      text-transform:uppercase;
+      transform:rotate(-1deg);
+    }
+
+    h1,h2,h3,p{margin-top:0}
+    h1{
+      font-size:clamp(3.7rem, 9vw, 7.6rem);
+      line-height:.79;
+      letter-spacing:-.085em;
+      margin:24px 0 26px;
+      font-weight:1000;
+      text-transform:uppercase;
+    }
+
+    h1 span{color:var(--orange); display:block}
+    .lede{
+      max-width:680px;
+      font-size:clamp(1.08rem,2vw,1.35rem);
+      font-weight:650;
+      color:#36332f;
+    }
+    .hero-actions{display:flex; flex-wrap:wrap; gap:14px; margin-top:28px}
+
+    .hero-card{
+      border:3px solid var(--ink);
+      background:var(--cream);
+      border-radius:32px;
+      min-height:480px;
+      padding:28px;
+      box-shadow:var(--shadow);
+      position:relative;
+      overflow:hidden;
+      transform:rotate(1deg);
+    }
+
+    .stamp{
+      position:absolute;
+      top:22px; right:22px;
+      width:118px; height:118px;
+      display:grid; place-items:center;
+      text-align:center;
+      border:4px solid var(--ink);
+      border-radius:50%;
+      background:var(--yellow);
+      font-size:.83rem;
+      font-weight:1000;
+      line-height:1.05;
+      transform:rotate(8deg);
+    }
+
+    .bowl{
+      width:260px; height:155px;
+      position:absolute;
+      left:50%; bottom:88px;
+      transform:translateX(-50%);
+      border:5px solid var(--ink);
+      border-top:0;
+      border-radius:0 0 140px 140px;
+      background:var(--orange);
+    }
+    .bowl:before{
+      content:"";
+      position:absolute;
+      left:-5px; top:-28px;
+      width:260px; height:55px;
+      border:5px solid var(--ink);
+      border-radius:50%;
+      background:
+        radial-gradient(circle at 26% 42%, #7f3e28 0 9%, transparent 10%),
+        radial-gradient(circle at 43% 58%, #f3be3b 0 10%, transparent 11%),
+        radial-gradient(circle at 62% 35%, #57705c 0 8%, transparent 9%),
+        radial-gradient(circle at 75% 59%, #c83b2f 0 9%, transparent 10%),
+        #efe1bf;
+    }
+    .steam{
+      position:absolute;
+      bottom:255px;
+      left:50%;
+      width:180px; height:125px;
+      transform:translateX(-50%);
+    }
+    .steam i{
+      position:absolute;
+      width:32px; height:90px;
+      border-left:5px solid var(--ink);
+      border-radius:50%;
+      opacity:.9;
+    }
+    .steam i:nth-child(1){left:28px; transform:rotate(12deg)}
+    .steam i:nth-child(2){left:76px; height:110px; top:-12px; transform:rotate(-8deg)}
+    .steam i:nth-child(3){left:126px; transform:rotate(14deg)}
+
+    .hero-card-copy{
+      position:absolute; left:28px; bottom:22px; right:28px;
+      display:flex; justify-content:space-between; gap:16px; align-items:end;
+      font-weight:950;
+    }
+    .hero-card-copy strong{font-size:1.9rem; letter-spacing:-.05em}
+    .hero-card-copy small{color:var(--muted); max-width:150px; text-align:right}
+
+    .ticker{
+      border-block:3px solid var(--ink);
+      background:var(--yellow);
+      overflow:hidden;
+    }
+    .ticker div{
+      padding:12px 0;
+      white-space:nowrap;
+      font-weight:1000;
+      text-transform:uppercase;
+      letter-spacing:.05em;
+      font-size:.9rem;
+    }
+
+    section{padding:80px 0}
+    .section-kicker{
+      font-weight:1000;
+      text-transform:uppercase;
+      letter-spacing:.12em;
+      font-size:.78rem;
+      color:var(--red);
+    }
+    h2{
+      font-size:clamp(2.5rem,5vw,4.7rem);
+      line-height:.92;
+      letter-spacing:-.065em;
+      margin:10px 0 18px;
+      font-weight:1000;
+      text-transform:uppercase;
+    }
+    .section-intro{
+      max-width:720px;
+      color:var(--muted);
+      font-size:1.12rem;
+      font-weight:600;
+    }
+
+    .menu-grid{
+      margin-top:36px;
+      display:grid;
+      grid-template-columns:repeat(3, 1fr);
+      gap:22px;
+    }
+    .menu-card{
+      border:3px solid var(--ink);
+      border-radius:var(--radius);
+      background:var(--cream);
+      padding:26px;
+      min-height:310px;
+      box-shadow:6px 6px 0 var(--ink);
+      display:flex;
+      flex-direction:column;
+    }
+    .menu-card:nth-child(2){transform:rotate(-.8deg)}
+    .menu-card:nth-child(3){transform:rotate(.7deg)}
+    .menu-icon{
+      width:58px; height:58px;
+      display:grid; place-items:center;
+      font-size:1.7rem;
+      border:3px solid var(--ink);
+      border-radius:15px;
+      background:var(--yellow);
+      margin-bottom:24px;
+    }
+    .menu-card h3{
+      font-size:1.7rem;
+      letter-spacing:-.04em;
+      margin-bottom:10px;
+    }
+    .menu-card p{color:var(--muted); font-weight:600}
+    .tag{
+      margin-top:auto;
+      align-self:flex-start;
+      font-size:.76rem;
+      text-transform:uppercase;
+      letter-spacing:.1em;
+      font-weight:1000;
+      border:2px solid var(--ink);
+      border-radius:999px;
+      padding:6px 9px;
+      background:var(--paper);
+    }
+
+    .sizes{
+      padding-top:0;
+    }
+    .size-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:24px;
+    }
+    .size{
+      border:3px solid var(--ink);
+      border-radius:28px;
+      padding:30px;
+      background:var(--cream);
+    }
+    .size.macro{
+      background:var(--orange);
+      box-shadow:var(--shadow);
+    }
+    .size .big{
+      font-size:clamp(2.4rem,4vw,4rem);
+      font-weight:1000;
+      line-height:.9;
+      letter-spacing:-.06em;
+      text-transform:uppercase;
+      margin-bottom:18px;
+    }
+    .size ul{padding-left:20px; margin-bottom:0; font-weight:750}
+    .science{
+      margin-top:18px;
+      display:inline-block;
+      padding:8px 12px;
+      background:var(--yellow);
+      border:2px solid var(--ink);
+      font-weight:1000;
+      transform:rotate(-1deg);
+    }
+
+    .manifesto{
+      background:var(--ink);
+      color:var(--cream);
+    }
+    .manifesto-grid{
+      display:grid;
+      grid-template-columns:.85fr 1.15fr;
+      gap:70px;
+      align-items:start;
+    }
+    .manifesto h2{color:var(--yellow)}
+    .principles{display:grid; gap:14px}
+    .principle{
+      padding:20px 0;
+      border-bottom:1px solid rgba(255,255,255,.22);
+      display:grid;
+      grid-template-columns:52px 1fr;
+      gap:18px;
+      align-items:start;
+    }
+    .principle b{font-size:1.7rem; color:var(--orange)}
+    .principle strong{display:block; font-size:1.12rem; margin-bottom:3px}
+    .principle span{color:#cfc7b9}
+
+    .lab{
+      display:grid;
+      grid-template-columns:1fr .8fr;
+      gap:44px;
+      align-items:center;
+    }
+    .note-card{
+      border:3px solid var(--ink);
+      border-radius:24px;
+      background:var(--yellow);
+      box-shadow:var(--shadow);
+      padding:28px;
+      transform:rotate(1deg);
+    }
+    .note-card strong{
+      font-size:2rem;
+      line-height:1;
+      letter-spacing:-.045em;
+      display:block;
+      margin-bottom:14px;
+    }
+
+    .footer{
+      border-top:3px solid var(--ink);
+      padding:34px 0 46px;
+      font-size:.9rem;
+      color:var(--muted);
+    }
+    .footer-row{
+      display:flex; justify-content:space-between; gap:24px; flex-wrap:wrap;
+    }
+    .footer b{color:var(--ink)}
+
+
+    .action-grid{
+      margin-top:34px;
+      display:grid;
+      grid-template-columns:repeat(3, 1fr);
+      gap:22px;
+    }
+    .action-card{
+      border:3px solid var(--ink);
+      border-radius:24px;
+      background:var(--cream);
+      padding:26px;
+      box-shadow:6px 6px 0 var(--ink);
+      display:flex;
+      flex-direction:column;
+      min-height:300px;
+    }
+    .action-card:nth-child(2){transform:rotate(-.6deg)}
+    .action-card:nth-child(3){transform:rotate(.7deg)}
+    .action-badge{
+      display:inline-block;
+      align-self:flex-start;
+      margin-bottom:18px;
+      padding:7px 10px;
+      border:2px solid var(--ink);
+      border-radius:999px;
+      background:var(--yellow);
+      font-size:.76rem;
+      font-weight:1000;
+      text-transform:uppercase;
+      letter-spacing:.09em;
+    }
+    .action-card h3{
+      font-size:1.55rem;
+      letter-spacing:-.04em;
+      margin-bottom:10px;
+    }
+    .action-card p{
+      color:var(--muted);
+      font-weight:600;
+      margin-bottom:18px;
+    }
+    .action-card .btn{
+      margin-top:auto;
+      align-self:flex-start;
+    }
+
+    @media (max-width:840px){
+      nav a:not(.btn){display:none}
+      .hero,.manifesto-grid,.lab,.size-grid{grid-template-columns:1fr}
+      .hero{padding-top:48px}
+      .hero-card{min-height:430px}
+      .menu-grid,.action-grid{grid-template-columns:1fr}
+      .menu-card:nth-child(2),.menu-card:nth-child(3),
+      .action-card:nth-child(2),.action-card:nth-child(3){transform:none}
+      .manifesto-grid{gap:32px}
+    }
+
+    @media (max-width:520px){
+      .wrap{width:min(100% - 22px, 1120px)}
+      h1{font-size:3.8rem}
+      section{padding:60px 0}
+      .hero-card{min-height:390px}
+      .bowl{width:220px;height:135px}
+      .bowl:before{width:220px}
+      .stamp{width:92px;height:92px;font-size:.67rem}
+      .hero-card-copy strong{font-size:1.45rem}
+      .hero-card-copy small{display:none}
+    }
+  </style>
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="wrap nav">
+      <a class="brand" href="#top" aria-label="Bowlworks home">
+        <span class="brand-mark" aria-hidden="true"></span>
+        BOWLWORKS
+      </a>
+      <nav aria-label="Primary navigation">
+        <a href="#menu">Bowls</a>
+        <a href="#sizes">Sizes</a>
+        <a href="#idea">The idea</a>
+        <a href="#launch">Help launch</a>
+        <a class="btn" href="#test-kitchen">Test kitchen</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <div class="wrap hero">
+      <div>
+        <span class="eyebrow">Fox Valley • Wisconsin • In development</span>
+        <h1>Hot food.<span>Shovel ready.</span></h1>
+        <p class="lede">
+          Bowlworks is built around one very complicated culinary philosophy:
+          put good hot food over seasoned rice, add the right toppings, and get it into
+          hungry hands without making lunch a whole production.
+        </p>
+        <div class="hero-actions">
+          <a class="btn" href="#menu">See the bowls</a>
+          <a class="btn alt" href="#test-kitchen">Join the test kitchen</a>
+        </div>
+      </div>
+
+      <div class="hero-card" aria-label="Illustration of a Shovel Bowl">
+        <div class="stamp">HOME OF<br>THE<br>SHOVEL<br>BOWL</div>
+        <div class="steam" aria-hidden="true"><i></i><i></i><i></i></div>
+        <div class="bowl" aria-hidden="true"></div>
+        <div class="hero-card-copy">
+          <strong>FAST. HOT.<br>NO SAD DESK LUNCH.</strong>
+          <small>Prototype kitchen currently accepting extremely serious bowl opinions.</small>
+        </div>
+      </div>
+    </div>
+
+    <div class="ticker" aria-hidden="true">
+      <div>
+        &nbsp; TWO SCOOPS OF HOT • CHEESE IF IT BELONGS THERE • CREMA WHEN APPROPRIATE • SHOVEL BOWL • MACRO BOWL • HOT SCOOP • REPEAT •
+        TWO SCOOPS OF HOT • CHEESE IF IT BELONGS THERE • CREMA WHEN APPROPRIATE • SHOVEL BOWL • MACRO BOWL • HOT SCOOP •
+      </div>
+    </div>
+
+    <section id="menu">
+      <div class="wrap">
+        <span class="section-kicker">Prototype menu</span>
+        <h2>Three lanes.<br>Zero nonsense.</h2>
+        <p class="section-intro">
+          A small core menu keeps the line moving and the food consistent. Two dependable regulars,
+          plus one rotating Hot Scoop so we can keep trying new things without turning the menu into a novel.
+        </p>
+
+        <div class="menu-grid">
+          <article class="menu-card">
+            <div class="menu-icon">🫑</div>
+            <h3>Stuffed Pepper Bowl</h3>
+            <p>
+              Seasoned rice, savory ground beef, sweet peppers and tomato-forward comfort-food goodness,
+              finished with melty cheese.
+            </p>
+            <span class="tag">Core bowl</span>
+          </article>
+
+          <article class="menu-card">
+            <div class="menu-icon">🌯</div>
+            <h3>Burrito Bowl</h3>
+            <p>
+              Seasoned rice with taco-spiced beef and pinto beans, Mexican cheese blend,
+              crema and whatever finishing touches survive the test kitchen.
+            </p>
+            <span class="tag">Core bowl</span>
+          </article>
+
+          <article class="menu-card">
+            <div class="menu-icon">🔥</div>
+            <h3>Hot Scoop</h3>
+            <p>
+              The rotating third bowl. Pepper steak. Curry chicken. Something weird we got overly excited about
+              on a Tuesday. When it works, it earns another shift.
+            </p>
+            <span class="tag">Rotating bowl</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="sizes" id="sizes">
+      <div class="wrap size-grid">
+        <article class="size">
+          <div class="big">Shovel Bowl</div>
+          <p>The standard issue. Enough lunch to make the next few hours significantly less offensive.</p>
+          <ul>
+            <li>Seasoned rice base</li>
+            <li>Your hot scoop</li>
+            <li>Proper toppings</li>
+            <li>Fork strongly recommended. Shovel spiritually encouraged.</li>
+          </ul>
+        </article>
+
+        <article class="size macro">
+          <div class="big">Macro Bowl</div>
+          <p>
+            The larger bowl for people who looked at the Shovel Bowl and thought,
+            “Those numbers could be bigger.”
+          </p>
+          <ul>
+            <li>More food</li>
+            <li>More macros</li>
+            <li>More confidence</li>
+            <li>Approximately 30% more science*</li>
+          </ul>
+          <span class="science">BIGGER BOWL. BIGGER NUMBERS. SCIENCE.</span>
+        </article>
+      </div>
+    </section>
+
+    <section class="manifesto" id="idea">
+      <div class="wrap manifesto-grid">
+        <div>
+          <span class="section-kicker" style="color:#f05a28">Why Bowlworks</span>
+          <h2>Lunch should work harder.</h2>
+          <p style="color:#d7d0c3; max-width:560px;">
+            The idea started with factory-shift food: warm, filling, repeatable meals that can be assembled fast,
+            travel well, and don't require a 47-item menu or a culinary identity crisis.
+          </p>
+        </div>
+
+        <div class="principles">
+          <div class="principle">
+            <b>01</b>
+            <div><strong>Keep the menu small.</strong><span>Do a few things well enough that people actually crave them again.</span></div>
+          </div>
+          <div class="principle">
+            <b>02</b>
+            <div><strong>Build for real life.</strong><span>Work breaks, take-home dinners, factory windows, events and busy people.</span></div>
+          </div>
+          <div class="principle">
+            <b>03</b>
+            <div><strong>Make value obvious.</strong><span>Hot food, useful portions, straightforward pricing, no mysterious tiny-art-food situation.</span></div>
+          </div>
+          <div class="principle">
+            <b>04</b>
+            <div><strong>Let the community tune it.</strong><span>Test, listen, adjust, and only keep the bowls people genuinely want back.</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <section id="launch">
+      <div class="wrap">
+        <span class="section-kicker">Help launch Bowlworks</span>
+        <h2>Three easy ways<br>to help this happen.</h2>
+        <p class="section-intro">
+          This page is the pitch, but the real mission is simple: find out who actually wants Bowlworks to exist,
+          what bowls they’d come back for, and where they’d realistically buy it. If you want to help move this from
+          “great idea” to “real thing,” pick a lane below.
+        </p>
+
+        <div class="action-grid">
+          <article class="action-card">
+            <span class="action-badge">Action 01</span>
+            <h3>Join the test kitchen</h3>
+            <p>
+              Volunteer as tribute. Taste early bowl concepts, give brutally honest feedback,
+              and help decide what actually deserves a permanent spot on the menu.
+            </p>
+            <a class="btn" href="mailto:bowlworks@tschech.co?subject=Join%20the%20Bowlworks%20Test%20Kitchen&body=I%20volunteer%20as%20tribute%20for%20the%20Bowlworks%20test%20kitchen.%0A%0AName:%0ALocation:%0AWhy%20I%20want%20in:">I volunteer as tribute</a>
+          </article>
+
+          <article class="action-card">
+            <span class="action-badge">Action 02</span>
+            <h3>Pitch a bowl idea</h3>
+            <p>
+              Got a combo that deserves a shift? Send your dream bowl, favorite toppings,
+              or a Hot Scoop concept weird enough that we might actually try it.
+            </p>
+            <a class="btn" href="mailto:bowlworks@tschech.co?subject=My%20Bowlworks%20Bowl%20Idea&body=Here%20is%20my%20Bowlworks%20idea:%0A%0ABowl%20name:%0AProtein:%0ARice%20or%20base:%0AToppings:%0AWhy%20it%20would%20slap:">Pitch a bowl</a>
+          </article>
+
+          <article class="action-card">
+            <span class="action-badge">Action 03</span>
+            <h3>Tell us where you'd buy it</h3>
+            <p>
+              Factory lunch window? Food truck stop? Farmers market? Brewery? Event pop-up?
+              Tell us where Bowlworks would actually fit into real life.
+            </p>
+            <a class="btn" href="mailto:bowlworks@tschech.co?subject=Where%20I%27d%20Buy%20Bowlworks&body=If%20Bowlworks%20opened,%20I%27d%20most%20likely%20buy%20it:%0A%0AWhere:%0ATime%20of%20day:%0AWhat%20I%27d%20order:%0AAnything%20else:">Tell us where</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="test-kitchen">
+      <div class="wrap lab">
+        <div>
+          <span class="section-kicker">The test kitchen</span>
+          <h2>We are not pretending this is finished.</h2>
+          <p class="section-intro">
+            Bowlworks is in the deliciously unofficial stage: recipes are being tested, portions are being argued about,
+            and the Hot Scoop roster is still earning its keep.
+          </p>
+          <p class="section-intro">
+            If you're in the Fox Valley and would happily provide strong opinions in exchange for experimental bowls,
+            you're exactly the kind of person this thing needs.
+          </p>
+          <a class="btn" href="mailto:bowlworks@tschech.co?subject=Bowlworks%20Test%20Kitchen&body=I%20volunteer%20as%20tribute%20for%20the%20Bowlworks%20test%20kitchen.">I volunteer as tribute</a>
+        </div>
+
+        <aside class="note-card">
+          <strong>Current research question:</strong>
+          <p>How much food can reasonably be described as “a bowl” before we have accidentally created a bucket?</p>
+          <p style="margin-bottom:0;"><b>Working answer:</b> Macro Bowl.</p>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer-row">
+      <div><b>BOWLWORKS</b> — Home of the Shovel Bowl.</div>
+      <div>A TSCHECH Labs experiment • tschech.co</div>
+    </div>
+  </footer>
+</body>
+</html>
