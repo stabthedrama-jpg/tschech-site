@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Whisper Radar — TSCHECH Labs</title>
+    <link>https://tschech.co/whispers/</link>
+    <description>A public research journal on stock rumors, hype, and evidence. Opening post available; live findings will follow when the data is ready.</description>
+    <language>en-us</language>
+    <atom:link href="https://tschech.co/whispers/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>Fifty voices can still be one source</title>
+      <link>https://tschech.co/whispers/#fifty-voices</link>
+      <guid isPermaLink="true">https://tschech.co/whispers/#fifty-voices</guid>
+      <description>The opening post introduces Whisper Radar's experiment: trace how stock stories spread, check their evidence, and keep a visible record of the wrong calls. Includes a clearly labeled fictional example; no measured stock findings or validated model exists yet.</description>
+    </item>
+  </channel>
+</rss>
