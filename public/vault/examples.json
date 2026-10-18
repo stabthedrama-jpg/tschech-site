@@ -1,1 +1,50 @@
-[]
+[
+  {
+    "name": "High Tide",
+    "decklist": "2 Bond of Insight\n1 Cunning Wish\n1 Dig Through Time\n1 Divergent Equation\n1 Echoing Truth\n4 Frantic Search\n2 Glamdring, Foe-hammer // Gleam of Death\n3 Hidden Strings\n4 High Tide\n4 Impulse\n18 Island\n1 Mathemagics\n1 Merchant Scroll\n1 Mind's Desire\n4 Preordain\n2 Remand\n2 Sleight of Hand\n2 Spell Snare\n1 Treasure Cruise\n2 Turnabout\n2 Expansion // Explosion\n1 Commit // Memory\n\nSideboard\n1 Brain Freeze\n1 Flash Flood\n2 Gigadrowse\n4 Leyline of the Void\n3 Perilous Voyage\n2 Spell Snare\n1 Stroke of Genius\n1 Turnabout"
+  },
+  {
+    "name": "Blue Post",
+    "decklist": "1 Academy Ruins\n2 Blast Zone\n2 Boon of the Wish-Giver\n4 Cloudpost\n4 Condescend\n2 Expedition Map\n3 Giant's Boulder\n4 Glimmerpost\n10 Island\n1 Mindslaver\n1 Monument to Perfection\n4 Oblivion Stone\n4 Remand\n4 Repeal\n4 Scour for Scrap\n1 Shark Typhoon\n1 Sol Ring\n1 Soul-Guide Lantern\n1 The Stone Brain\n3 Trenchpost\n3 Warping Wail\n\nSideboard\n1 Annul\n2 Pithing Needle\n1 Ratchet Bomb\n2 Soul-Guide Lantern\n3 Spell Pierce\n1 The Filigree Sylex\n1 The Stone Brain\n1 Tormod's Crypt\n3 Whirlwind Denial"
+  },
+  {
+    "name": "Eldrazi Post",
+    "decklist": "4 Ancient Stirrings\n1 Blast Zone\n4 Breaker of Creation\n4 Chromatic Sphere\n4 Chromatic Star\n4 Cloudpost\n4 Devourer of Destiny\n2 Expedition Map\n4 Explore\n1 Extinguisher Battleship\n6 Forest\n4 Glimmerpost\n1 Mariposa Military Base\n2 Oblivion Stone\n1 Scavenger Grounds\n1 Sol Ring\n2 Soul-Guide Lantern\n2 Sowing Mycospawn\n1 Thespian's Stage\n4 Trenchpost\n2 Warping Wail\n2 World Breaker\n\nSideboard\n1 Ratchet Bomb\n2 Soul-Guide Lantern\n1 The Filigree Sylex\n2 The Stone Brain\n2 Warping Wail\n4 Wastescape Battlemage"
+  },
+  {
+    "name": "Goblins",
+    "decklist": "2 Blackcleave Cliffs\n4 Boggart Cursecrafter\n4 Chthonian Nightmare\n4 Foreboding Ruins\n3 Gempalm Incinerator\n3 Goblin Matron\n2 Goblin Ringleader\n4 Grub, Storied Matriarch // Grub, Notorious Auntie\n1 Gut, True Soul Zealot\n4 Mogg War Marshal\n5 Mountain\n3 Mudbutton Cursetosser\n4 Munitions Expert\n1 Rundvelt Hordemaster\n3 Skirk Prospector\n2 Sling-Gang Lieutenant\n1 Sol Ring\n4 Sulfurous Springs\n5 Swamp\n1 Taster of Wares\n\nSideboard\n3 Damping Sphere\n4 Duress\n3 Feed the Swarm\n3 Leyline of the Void\n2 Meltdown"
+  },
+  {
+    "name": "Thopter Combo",
+    "decklist": "1 Balance\n1 Cathar Commando\n2 Celestial Colonnade\n2 Counterspell\n2 Deduce\n3 Depopulate\n1 Dig Through Time\n2 Dress Down\n2 Fact or Fiction\n9 Island\n4 Lose Focus\n1 Mishra's Bauble\n2 Perilous Landscape\n5 Plains\n4 Port Town\n1 Sevinne's Reclamation\n2 Soul-Guide Lantern\n3 Sword of the Meek\n4 Swords to Plowshares\n1 Talisman of Progress\n4 Thirst for Knowledge\n4 Thopter Foundry\n\nSideboard\n2 Cathar Commando\n2 Deafening Silence\n2 Echoing Truth\n4 Leyline of Sanctity\n1 Lurrus of the Dream-Den\n2 Soul-Guide Lantern\n2 Test of Talents"
+  },
+  {
+    "name": "Burn",
+    "decklist": "4 Chain Lightning\n4 Eidolon of the Great Revel\n2 Exquisite Firecraft\n4 Fireblast\n4 Goblin Guide\n4 Lava Spike\n4 Monastery Swiftspear\n18 Mountain\n2 Play with Fire\n4 Rift Bolt\n4 Skewer the Critics\n2 Skullcrack\n\nSideboard\n2 Combust\n2 Magebane Lizard\n3 Pyroclasm\n3 Siege Smash\n2 Skullcrack\n3 Soul-Guide Lantern"
+  },
+  {
+    "name": "Elves",
+    "decklist": "4 Birchlore Rangers\n4 Cantankerous Keepers\n2 Celestial Reunion\n4 Dwynen's Elite\n4 Elvish Visionary\n13 Forest\n4 Glimpse of Nature\n2 Heritage Druid\n2 Jaspera Sentinel\n4 Llanowar Elves\n4 Necroblossom Snarl\n4 Nettle Sentinel\n1 Quirion Ranger\n2 Quirion Sentinel\n2 Shaman of the Pack\n4 Wirewood Symbiote\n\nSideboard\n2 Hard-Hitting Question\n4 Obstinate Baloth\n2 Pick Your Poison\n4 Reclamation Sage\n3 Tsunami"
+  },
+  {
+    "name": "Boros Energy",
+    "decklist": "3 Aether Hub\n4 Amped Raptor\n3 Brotherhood Scribe\n4 Furycalm Snarl\n4 Galvanic Discharge\n4 Guide of Souls\n4 Gut, True Soul Zealot\n4 Invasion of Gobakhan // Lightshield Array\n7 Mountain\n7 Plains\n4 Stadium Headliner\n4 Static Prison\n4 Unstable Amulet\n4 Voldaren Epicure\n\nSideboard\n4 Damping Sphere\n3 Flamescroll Celebrant // Revel in Silence\n4 Soul-Guide Lantern\n4 Sunset Revelry"
+  },
+  {
+    "name": "Creativity",
+    "decklist": "4 Archon of Cruelty\n3 Brainsurge\n4 Cascade Bluffs\n4 Deduce\n1 Desolate Lighthouse\n4 Hard Evidence\n4 Indomitable Creativity\n6 Island\n1 Library\n4 Lose Focus\n1 Mountain\n2 Prismari Charm\n2 Sear\n4 Shark Typhoon\n4 Shivan Reef\n2 Smoldering Marsh\n2 Spell Pierce\n3 Stock Up\n4 Sulfur Falls\n1 Transmogrify\n\nSideboard\n2 Abrade\n1 Crumble to Dust\n2 Flame Slash\n4 Mystical Dispute\n2 Serra's Emissary\n2 Spell Pierce\n2 Terastodon"
+  },
+  {
+    "name": "Allies",
+    "decklist": "4 Adarkar Wastes\n2 Battlefield Forge\n4 Brushland\n4 Earth King's Lieutenant\n1 Earth Kingdom Protectors\n4 Gran-Gran\n2 Great Divide Guide\n4 Hada Freeblade\n4 Halimar Excavator\n4 Invasion Reinforcements\n2 Ondu Cleric\n2 Personify\n3 Plains\n1 Rally the Ancestors\n3 Return to the Ranks\n4 Secluded Courtyard\n4 South Pole Voyager\n4 Stick, Fearless Mentor\n2 The Duke, Rebel Sentry\n2 Unclaimed Territory\n\nSideboard\n2 Inspired Insurgent\n1 Jirina, Dauntless General\n1 Lurrus of the Dream-Den\n2 Mai, Scornful Striker\n2 Ondu Cleric\n3 Sanctifier en-Vec\n2 Swords to Plowshares\n2 Thraben Charm"
+  },
+  {
+    "name": "MBC",
+    "decklist": "4 Archfiend of the Dross\n4 Blade of the Oni\n4 Fatal Push\n4 Field of Ruin\n3 Gray Merchant of Asphodel\n4 Hymn to Tourach\n4 Inquisition of Kozilek\n4 Power Word Kill\n3 Preacher of the Schism\n1 Sol Ring\n21 Swamp\n4 Unholy Annex // Ritual Chamber\n\nSideboard\n4 Break the Ice\n2 Cry of the Carnarium\n1 Duress\n4 Leyline of the Void\n3 Necromentia\n1 Shredder's Technique"
+  },
+  {
+    "name": "U/W Bane Control",
+    "decklist": "1 Archmage's Charm\n1 Balance\n1 Celestial Colonnade\n4 Consider\n1 Counterspell\n1 Dig Through Time\n2 Faithful Mending\n4 Frantic Inventory\n4 Glacial Fortress\n11 Island\n4 Lose Focus\n1 Monastery Mentor\n4 Preordain\n2 Razorgrass Ambush // Razorgrass Field\n4 Sailors' Bane\n3 Seachrome Coast\n3 Spell Pierce\n3 Swords to Plowshares\n3 Thought Scour\n2 Tolarian Terror\n1 Treasure Cruise\n\nSideboard\n1 Condemn\n1 Damping Sphere\n2 Disenchant\n2 Hushbringer\n1 Spell Pierce\n3 Stern Scolding\n2 Temporary Lockdown\n3 Test of Talents"
+  }
+]
